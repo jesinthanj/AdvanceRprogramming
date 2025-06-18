@@ -19,14 +19,22 @@ In this brief report, we explore how **diamond price** varies with **carat size*
 Below are some descriptive statistics for the two variables used in our plot:
 
 - *Carat*  
-  - Min: 0.2  
-  - Median: 0.7  
-  - Max: 5.01  
+	- Minimum: 0.2
+	- 1st Quartile (Q1): 0.4
+	- Median: 0.7
+	- Mean: 0.798
+	- 3rd Quartile (Q3): 1.04
+	- Maximum: 5.01
+	- Standard Deviation: 0.474
 
 - *Price (USD)*  
-  - Min: \$326  
-  - Median: \$2401  
-  - Max: \$18,823  
+ 	- Minimum: $326
+	- 1st Quartile (Q1): $950
+	- Median: $2401
+	- Mean: $3933
+	- 3rd Quartile (Q3): $5324
+	- Maximum: $18,823
+	- Standard Deviation: $3989
 
 # 📈 Scatter Plot of Diamond Price vs Carat
 
@@ -42,6 +50,7 @@ library(ggplot2)
 ```{r}
 ggplot(data = diamonds, aes(x = carat, y = price, color = cut)) +
   geom_point(alpha = 0.5, size = 1.2) +
+  geom_smooth(method = "loess", se = FALSE, linewidth = 1) +
   labs(
     title = "Diamond Price vs Carat by Cut",
     x = "Carat",
