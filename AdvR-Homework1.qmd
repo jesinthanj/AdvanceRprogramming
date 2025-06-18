@@ -1,0 +1,52 @@
+---
+title: "Exploring Diamond Prices -  Adv R - Homework1"
+author: "Jesinthan Joseph Durairaj - 24213676"
+format: pdf
+execute:
+  echo: false  # hide code
+  warning: false
+  message: false
+---
+
+# 🪙 Introduction
+
+The **`diamonds`** dataset from the `ggplot2` package contains the prices and attributes of over 53,000 diamonds, including carat weight, cut, color, clarity, and price. This dataset is widely used for practicing data visualization and modeling in R.
+
+In this brief report, we explore how **diamond price** varies with **carat size**, grouped by **cut quality**.
+
+# 📊 Data Summary
+
+Below are some descriptive statistics for the two variables used in our plot:
+
+- *Carat*  
+  - Min: 0.2  
+  - Median: 0.7  
+  - Max: 5.01  
+
+- *Price (USD)*  
+  - Min: \$326  
+  - Median: \$2401  
+  - Max: \$18,823  
+
+# 📈 Scatter Plot of Diamond Price vs Carat
+
+We visualize the relationship between `carat` and `price`, grouped by the diamond's **cut quality**.
+
+
+```{r}
+library(ggplot2)
+```
+
+# Plot carat vs. price by cut
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price, color = cut)) +
+  geom_point(alpha = 0.5, size = 1.2) +
+  labs(
+    title = "Diamond Price vs Carat by Cut",
+    x = "Carat",
+    y = "Price (USD)",
+    color = "Cut"
+  ) +
+  theme_minimal()
+```
