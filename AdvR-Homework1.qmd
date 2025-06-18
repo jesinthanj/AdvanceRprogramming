@@ -1,5 +1,5 @@
 ---
-title: "Exploring Diamond Prices -  Adv R - Homework1"
+title: "Git setup -  Adv R - Homework2"
 author: "Jesinthan Joseph Durairaj - 24213676"
 format: pdf
 execute:
